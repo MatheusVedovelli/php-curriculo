@@ -23,10 +23,33 @@
             margin: 0 auto;
             margin-top: 5px;
         }
+
+        .contato{
+            display: block;
+            margin: 0 auto;
+            width: 20vw;
+            min-width: 304px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .contato > input{
+            display: block;
+            width: 99%;
+            float: left;
+            clear: both;
+        }
+
+        .container{
+            width: 100vw;
+            max-width: 500px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-<form action="gerar.php" method="post">
+<form class="container" action="gerar.php" method="post">
     <h1 class="text-center">Nome da Pessoa: <input type="text" name="nome"></h1>
     <h2 class="text-center">Profissao: <input type="text" name="profissao"></h3>
     <hr>
@@ -39,10 +62,16 @@
     <h3 class="text-center">Habilidades</h3>
     <textarea name="habilidade" class="form-control  text-center"></textarea>
     <hr>
-    Email: <input type="email" name="email">
-    Telefone: <input type="text" name="telefone"><br>
-    Site: <input type="text" name="site"><br>
-    Endereço: <input type="text" name="endereco">
+    <div class="contato">
+        Email:<br>
+        <input type="email" name="email"><br>
+        Telefone:<br>
+        <input type="text" name="telefone"><br>
+        Site:<br>
+        <input type="text" name="site"><br>
+        Endereço:<br>
+        <input type="text" name="endereco">
+    </div>
     <input type="submit" class="btn-center" value="Gerar">
 </form>
 </body>
