@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Curriculo</title>
+
+    <style>
+        .text-center{
+            text-align: center;
+        }
+
+        .form-control{
+            display: block;
+            margin: 0 auto;
+            width: 100vw;
+            max-width: 300px;
+            height: 100vh;
+            max-height: 70px;
+        }
+
+        .btn-center{
+            display: block;
+            margin: 0 auto;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<form action="gerar.php" method="post">
+    <h1 class="text-center">Nome da Pessoa: <input type="text" name="nome"></h1>
+    <h2 class="text-center">Profissao: <input type="text" name="profissao"></h3>
+    <hr>
+    <h3 class="text-center">Objetivo</h3>
+    <textarea name="objetivo" class="form-control text-center"></textarea>
+    <hr>
+    <h3 class="text-center">Experiencias</h3>
+    <textarea name="experiencia" class="form-control  text-center"></textarea>
+    <hr>
+    <h3 class="text-center">Habilidades</h3>
+    <textarea name="habilidade" class="form-control  text-center"></textarea>
+    <hr>
+    Email: <input type="email" name="email">
+    Telefone: <input type="text" name="telefone"><br>
+    Site: <input type="text" name="site"><br>
+    Endereço: <input type="text" name="endereco">
+    <input type="submit" class="btn-center" value="Gerar">
+</form>
+</body>
+</html>
