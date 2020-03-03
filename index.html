@@ -1,78 +1,249 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Curriculo</title>
+    <title>Monte seu curriculo</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-        .text-center{
+        .header > p{
             text-align: center;
+            font-size: 100px;
         }
 
-        .form-control{
-            display: block;
-            margin: 0 auto;
-            width: 100vw;
-            max-width: 300px;
-            height: 100vh;
-            max-height: 70px;
+        .header > hr{
+            border-top: 4px solid;
         }
 
-        .btn-center{
-            display: block;
-            margin: 0 auto;
-            margin-top: 5px;
+        .mid-hr{
+            border-top: 1px solid;
         }
 
-        .contato{
-            display: block;
-            margin: 0 auto;
-            width: 20vw;
-            min-width: 304px;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .contato > input{
-            display: block;
-            width: 99%;
-            float: left;
-            clear: both;
-        }
-
-        .container{
-            width: 100vw;
-            max-width: 500px;
-            margin: 0 auto;
+        .fix-textarea{
+            resize: none;
         }
     </style>
 </head>
 <body>
-<form class="container" action="gerar.php" method="post">
-    <h1 class="text-center">Nome da Pessoa: <input type="text" name="nome"></h1>
-    <h2 class="text-center">Profissao: <input type="text" name="profissao"></h3>
-    <hr>
-    <h3 class="text-center">Objetivo</h3>
-    <textarea name="objetivo" class="form-control text-center"></textarea>
-    <hr>
-    <h3 class="text-center">Experiencias</h3>
-    <textarea name="experiencia" class="form-control  text-center"></textarea>
-    <hr>
-    <h3 class="text-center">Habilidades</h3>
-    <textarea name="habilidade" class="form-control  text-center"></textarea>
-    <hr>
-    <div class="contato">
-        Email:<br>
-        <input type="email" name="email"><br>
-        Telefone:<br>
-        <input type="text" name="telefone"><br>
-        Site:<br>
-        <input type="text" name="site"><br>
-        Endereço:<br>
-        <input type="text" name="endereco">
-    </div>
-    <input type="submit" class="btn-center" value="Gerar">
-</form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12 header">
+                        <p>MONTE SEU CURRICULO</p>
+                        <hr class="top-div">
+                    </div>
+        
+                    <div class="col-md-6">
+                        <fieldset class="form-group border p-2">
+                            <legend class="w-auto">Informações Básicas</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="nome">Nome Completo:</label>
+                                    <input type="text" name="nome" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="datenasc">Data de nascimento:</label>
+                                    <input type="date" name="datenasc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="telefone">Telefone:</label>
+                                    <input type="text" name="telefone" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="celular">Celular:</label>
+                                    <input type="text" name="celular" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" class="form-control">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="form-group border p-2">
+                            <legend class="w-auto">Endereço</legend>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <label for="endereco">Endereço:</label>
+                                    <input type="text" name="endereco" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="numero">Numero:</label>
+                                    <input type="number" name="text" class="form-control">
+                                </div>
+                                <div class="col-md-7">
+                                    <label for="complemento">Complemento:</label>
+                                    <input type="text" name="complemento" class="form-control">
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="bairro">Bairro:</label>
+                                    <input type="text" name="bairro" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="cep">CEP:</label>
+                                    <input type="text" name="cep" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cidade">Cidade:</label>
+                                    <input type="text" name="cidade" class=form-control>
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="estados-brasil">Estado:</label>
+                                    <select name="estados-brasil" class="form-control">
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <hr class="mid-hr">
+            </div>
+
+            <div class="col-md-12">
+                <fieldset class="form-group border p-2">
+                    <legend class="w-auto">Objetivo</legend>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="objetivo">Qual seu objetivo?</label>
+                            <textarea name="objetivo" rows="5" class="form-control fix-textarea"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="mid-hr">
+            </div>
+
+            <div class="col-md-12">
+                <fieldset class="form-group border p-2">
+                    <legend class="w-auto">Experiencias</legend>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="start">De:</label>
+                            <input type="date" name="start" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="end">Até:</label>
+                            <input type="date" name="end" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cargo">Cargo:</label>
+                            <input type="text" name="cargo" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="empresa">Empresa:</label>
+                            <input type="text" name="empresa" class="form-control">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="descricao">Descrição:</label>
+                            <textarea name="descricao" rows="3" class="form-control fix-textarea"></textarea>
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <b class="btn offset-md-9 btn-success">Adicionar Experiência</b>
+                            <b class="btn btn-danger">Limpar</b>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="mid-hr">
+            </div>
+
+            <div class="col-md-12">
+                <fieldset class="form-group border p-2">
+                    <legend class="w-auto">Formações</legend>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="completedate">Data:</label>
+                            <input type="month" name="completedate" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="graduacao">Graduação:</label>
+                            <input type="text" name="graduacao" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="instituicao">Instituição:</label>
+                            <input type="text" name="instituicao" id="" class="form-control">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="descricao">Descrição:</label>
+                            <textarea name="descricao" rows="3" class="form-control fix-textarea"></textarea>
+                        </div>
+
+                        <div class="col-md-12 mt-2">
+                            <b class="btn offset-md-9 btn-success">Adicionar Formação</b>
+                            <b class="btn btn-danger">Limpar</b>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="mid-hr">
+            </div>
+
+            <div class="col-md-12">
+                <fieldset class="form-group border p-2">
+                    <legend class="w-auto">Habilidades</legend>
+                    <div class="col-md-12">
+                        <label for="skill">Descrição da Habilidade:</label>
+                        <input type="text" name="skill" id="" class="form-control">
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <b class="btn offset-md-10 btn-success">Adicionar Habilidade</b>
+                    </div>
+                </fieldset>
+                <hr class="mid-hr">
+            </div>
+
+            <div class="col-md-12">
+                <fieldset class="form-group border p-2">
+                    <legend class="w-auto">Perfil Profissional</legend>
+                    <div class="col-md-12">
+                        <label for="perfil">Fale sobre você:</label>
+                        <textarea name="perfil" rows="4" class="form-control fix-textarea"></textarea>
+                    </div>
+                </fieldset>
+                <hr class="mid-hr">
+            </div>
+
+            <div class="col-md-12 text-center">
+                <b class="btn mb-2 btn-success">Gerar Curriculo</b>
+            </div>
+        </div>
+    </div>    
 </body>
 </html>
