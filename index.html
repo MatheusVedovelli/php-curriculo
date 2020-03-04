@@ -189,27 +189,27 @@
             <div class="col-md-12">
                 <fieldset class="form-group border p-2">
                     <legend class="w-auto">Formações</legend>
-                    <div class="row">
+                    <div class="row divform">
                         <div class="col-md-3">
                             <label for="completedate">Data:</label>
-                            <input type="month" name="completedate" class="form-control">
+                            <input type="month" id="completedate" name="completedate" class="form-control">
                         </div>
                         <div class="col-md-3">
                             <label for="graduacao">Graduação:</label>
-                            <input type="text" name="graduacao" class="form-control">
+                            <input type="text" id="graduacao" name="graduacao" class="form-control">
                         </div>
                         <div class="col-md-6">
                             <label for="instituicao">Instituição:</label>
-                            <input type="text" name="instituicao" class="form-control">
+                            <input type="text" id="instituicao" name="instituicao" class="form-control">
                         </div>
                         <div class="col-md-12">
                             <label for="descricao">Descrição:</label>
-                            <textarea name="descricao" rows="3" class="form-control fix-textarea"></textarea>
+                            <textarea name="descricao" id="formdesc" rows="3" class="form-control fix-textarea"></textarea>
                         </div>
 
                         <div class="col-md-12 mt-2">
-                            <b class="btn offset-md-9 btn-success">Adicionar Formação</b>
-                            <b class="btn btn-danger">Limpar</b>
+                            <b id="addform" class="btn offset-md-9 btn-success">Adicionar Formação</b>
+                            <b id="cleanform" class="btn btn-danger">Limpar</b>
                         </div>
                     </div>
                 </fieldset>
@@ -219,13 +219,15 @@
             <div class="col-md-12">
                 <fieldset class="form-group border p-2">
                     <legend class="w-auto">Habilidades</legend>
-                    <div class="col-md-12">
-                        <label for="skill">Descrição da Habilidade:</label>
-                        <input type="text" name="skill" class="form-control">
-                    </div>
-
-                    <div class="col-md-12 mt-2">
-                        <b class="btn offset-md-10 btn-success">Adicionar Habilidade</b>
+                    <div class="row divskill">
+                        <div class="col-md-12">
+                            <label for="skill">Descrição da Habilidade:</label>
+                            <input type="text" id="skill" name="skill" class="form-control">
+                        </div>
+    
+                        <div class="col-md-12 mt-2">
+                            <b id="addskill" class="btn offset-md-10 btn-success">Adicionar Habilidade</b>
+                        </div>
                     </div>
                 </fieldset>
                 <hr class="mid-hr">

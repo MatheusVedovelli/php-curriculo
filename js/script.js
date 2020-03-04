@@ -1,4 +1,6 @@
 let expcounter = 0;
+let formcounter = 0;
+let skillcounter = 0;
 
 function limparCampos()
 {
@@ -7,6 +9,14 @@ function limparCampos()
     $("#cargo").val("");
     $("#empresa").val("");
     $("#descricao").val("");
+}
+
+function limparCamposForm()
+{
+    $("#completedate").val("");
+    $("#graduacao").val("");
+    $("#instituicao").val("");
+    $("#formdesc").val("");
 }
 
 $(function(){
@@ -47,6 +57,81 @@ $(function(){
         {
             $('.existexp').remove();
             expcounter = 0;
+        }
+    });
+
+    $("#addform").click(function(){
+        let divform = $(".divform");
+        if(divform.find('.existform').length == 0)
+        {
+            divform.prepend(`<div class="col-md-12 existform">
+                                <fieldset id="formfield" class="border p-2 mb-3">
+                                </fieldset>
+                            </div>`);
+        }
+
+        $("#formfield").append(`<div id="form${formcounter}" class="formline">
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <b>${$("#completedate").val()}</b><br>
+                                            <b style="color: blue;">${$("#graduacao").val()},</b> ${$("#instituicao").val()}<br>
+                                            <small>${$("#formdesc").val()}</small>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <br>
+                                            <b name="form${formcounter}" class="btn btn-danger removeform">X</b>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>`);
+        formcounter++;
+        limparCamposForm();
+    });
+
+    $("#cleanform").click(limparCamposForm);
+
+    $(document).on('click', '.removeform', function(){
+        $('#' + $(this).attr('name')).remove();
+
+        if($('.divform').find('.formline').length == 0)
+        {
+            $('.existform').remove();
+            formcounter = 0;
+        }
+    });
+
+    $("#addskill").click(function(){
+        let divskill = $(".divskill");
+        if(divskill.find('.existskill').length == 0)
+        {
+            divskill.prepend(`<div class="col-md-12 existskill">
+                                <fieldset id="skillfield" class="border p-2 mb-3">
+                                </fieldset>
+                            </div>`);
+        }
+
+        $("#skillfield").append(`<div id="skill${skillcounter}" class="skillline">
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <b>-</b> ${$("#skill").val()}
+                                        </div>
+                                        <div class="col-md-1">
+                                            <b name="skill${skillcounter}" class="btn btn-danger removeskill">X</b>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>`);
+        skillcounter++;
+        $("#skill").val("");
+    });
+
+    $(document).on('click', '.removeskill', function(){
+        $('#' + $(this).attr('name')).remove();
+
+        if($('.divskill').find('.skillline').length == 0)
+        {
+            $('.existskill').remove();
+            skillcounter = 0;
         }
     });
 });
