@@ -20,6 +20,11 @@ function limparCamposForm()
 }
 
 $(function(){
+
+    $("#telefone").mask('(00) 0000-0000', {placeholder: "(XX) XXXX-XXXX"});
+    $("#celular").mask('(00) 0 0000-0000', {placeholder: "(XX) X XXXX-XXXX"});
+    $("#cep").mask('00000-000');
+
     $("#addexp").click(function(){
         let divexp = $(".divexp");
         if(divexp.find('.existexp').length == 0)
