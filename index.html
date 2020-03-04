@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <script src="js/script.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
@@ -154,30 +156,30 @@
             <div class="col-md-12">
                 <fieldset class="form-group border p-2">
                     <legend class="w-auto">Experiencias</legend>
-                    <div class="row">
-                        <div class="col-md-2">
+                    <div class="row divexp">
+                        <div class="col-md-3">
                             <label for="start">De:</label>
-                            <input type="date" name="start" class="form-control">
+                            <input type="date" id="startdate" name="start" class="form-control">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label for="end">Até:</label>
-                            <input type="date" name="end" class="form-control">
+                            <input type="date" id="enddate" name="end" class="form-control">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="cargo">Cargo:</label>
-                            <input type="text" name="cargo" class="form-control">
+                            <input type="text" id="cargo" name="cargo" class="form-control">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="empresa">Empresa:</label>
-                            <input type="text" name="empresa" class="form-control">
+                            <input type="text" id="empresa" name="empresa" class="form-control">
                         </div>
                         <div class="col-md-12">
                             <label for="descricao">Descrição:</label>
-                            <textarea name="descricao" rows="3" class="form-control fix-textarea"></textarea>
+                            <textarea name="descricao" id="descricao" rows="3" class="form-control fix-textarea"></textarea>
                         </div>
                         <div class="col-md-12 mt-2">
-                            <b class="btn offset-md-9 btn-success">Adicionar Experiência</b>
-                            <b class="btn btn-danger">Limpar</b>
+                            <b id="addexp" class="btn offset-md-9 btn-success">Adicionar Experiência</b>
+                            <b id="cleanexp" class="btn btn-danger">Limpar</b>
                         </div>
                     </div>
                 </fieldset>
@@ -198,7 +200,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="instituicao">Instituição:</label>
-                            <input type="text" name="instituicao" id="" class="form-control">
+                            <input type="text" name="instituicao" class="form-control">
                         </div>
                         <div class="col-md-12">
                             <label for="descricao">Descrição:</label>
@@ -219,7 +221,7 @@
                     <legend class="w-auto">Habilidades</legend>
                     <div class="col-md-12">
                         <label for="skill">Descrição da Habilidade:</label>
-                        <input type="text" name="skill" id="" class="form-control">
+                        <input type="text" name="skill" class="form-control">
                     </div>
 
                     <div class="col-md-12 mt-2">
