@@ -27,6 +27,7 @@ $(function(){
 
     $("#addexp").click(function(){
         let divexp = $(".divexp");
+        
         if(divexp.find('.existexp').length == 0)
         {
             divexp.prepend(`<div class="col-md-12 existexp">
@@ -35,8 +36,13 @@ $(function(){
                             </div>`);
         }
 
-        $("#expfield").append(`<div id="exp${expcounter}" class="expline">
+        $("#expfield").append(`<div class="expline">
                                     <div class="row">
+                                        <input type="hidden" name="experiences[${expcounter}][startdate]" value="${$("#startdate").val()}"/>
+                                        <input type="hidden" name="experiences[${expcounter}][enddate]" value="${$("#enddate").val()}"/>
+                                        <input type="hidden" name="experiences[${expcounter}][cargo]" value="${$("#cargo").val()}"/>
+                                        <input type="hidden" name="experiences[${expcounter}][empresa]" value="${$("#empresa").val()}"/>
+                                        <input type="hidden" name="experiences[${expcounter}][descricao]" value="${$("#descricao").val()}"/>
                                         <div class="col-md-11">
                                             <b>DE ${$("#startdate").val()} ATÉ ${$("#enddate").val()}</b><br>
                                             <b style="color: blue;">${$("#cargo").val()},</b> ${$("#empresa").val()}<br>
@@ -44,7 +50,7 @@ $(function(){
                                         </div>
                                         <div class="col-md-1">
                                             <br>
-                                            <b name="exp${expcounter}" class="btn btn-danger removeexp">X</b>
+                                            <b class="btn btn-danger removeexp">X</b>
                                         </div>
                                     </div>
                                     <hr>
@@ -56,7 +62,8 @@ $(function(){
     $("#cleanexp").click(limparCampos);
 
     $(document).on('click', '.removeexp', function(){
-        $('#' + $(this).attr('name')).remove();
+        $(this).parent().parent().remove();
+        expcounter--;
 
         if($('.divexp').find('.expline').length == 0)
         {
@@ -75,8 +82,12 @@ $(function(){
                             </div>`);
         }
 
-        $("#formfield").append(`<div id="form${formcounter}" class="formline">
+        $("#formfield").append(`<div class="formline">
                                     <div class="row">
+                                        <input type="hidden" name="formations[${formcounter}][completedate]" value="${$("#completedate").val()}"/>
+                                        <input type="hidden" name="formations[${formcounter}][graduacao]" value="${$("#graduacao").val()}"/>
+                                        <input type="hidden" name="formations[${formcounter}][instituicao]" value="${$("#instituicao").val()}"/>
+                                        <input type="hidden" name="formations[${formcounter}][formdesc]" value="${$("#formdesc").val()}"/>
                                         <div class="col-md-11">
                                             <b>${$("#completedate").val()}</b><br>
                                             <b style="color: blue;">${$("#graduacao").val()},</b> ${$("#instituicao").val()}<br>
@@ -84,7 +95,7 @@ $(function(){
                                         </div>
                                         <div class="col-md-1">
                                             <br>
-                                            <b name="form${formcounter}" class="btn btn-danger removeform">X</b>
+                                            <b class="btn btn-danger removeform">X</b>
                                         </div>
                                     </div>
                                     <hr>
@@ -96,7 +107,8 @@ $(function(){
     $("#cleanform").click(limparCamposForm);
 
     $(document).on('click', '.removeform', function(){
-        $('#' + $(this).attr('name')).remove();
+        $(this).parent().parent().remove();
+        formcounter--;
 
         if($('.divform').find('.formline').length == 0)
         {
@@ -115,13 +127,14 @@ $(function(){
                             </div>`);
         }
 
-        $("#skillfield").append(`<div id="skill${skillcounter}" class="skillline">
+        $("#skillfield").append(`<div class="skillline">
                                     <div class="row">
+                                        <input type="hidden" name="skills[${skillcounter}]" value="${$("#skill").val()}"/>
                                         <div class="col-md-11">
                                             <b>-</b> ${$("#skill").val()}
                                         </div>
                                         <div class="col-md-1">
-                                            <b name="skill${skillcounter}" class="btn btn-danger removeskill">X</b>
+                                            <b class="btn btn-danger removeskill">X</b>
                                         </div>
                                     </div>
                                     <hr>
@@ -131,7 +144,8 @@ $(function(){
     });
 
     $(document).on('click', '.removeskill', function(){
-        $('#' + $(this).attr('name')).remove();
+        $(this).parent().parent().remove();
+        skillcounter--;
 
         if($('.divskill').find('.skillline').length == 0)
         {
