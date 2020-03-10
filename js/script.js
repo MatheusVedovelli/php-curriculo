@@ -1,7 +1,3 @@
-let expcounter = 0;
-let formcounter = 0;
-let skillcounter = 0;
-
 function limparCampos()
 {
     $("#startdate").val("");
@@ -38,11 +34,11 @@ $(function(){
 
         $("#expfield").append(`<div class="expline">
                                     <div class="row">
-                                        <input type="hidden" name="experiences[${expcounter}][startdate]" value="${$("#startdate").val()}"/>
-                                        <input type="hidden" name="experiences[${expcounter}][enddate]" value="${$("#enddate").val()}"/>
-                                        <input type="hidden" name="experiences[${expcounter}][cargo]" value="${$("#cargo").val()}"/>
-                                        <input type="hidden" name="experiences[${expcounter}][empresa]" value="${$("#empresa").val()}"/>
-                                        <input type="hidden" name="experiences[${expcounter}][descricao]" value="${$("#descricao").val()}"/>
+                                        <input type="hidden" name="experiences[][startdate]" value="${$("#startdate").val()}"/>
+                                        <input type="hidden" name="experiences[][enddate]" value="${$("#enddate").val()}"/>
+                                        <input type="hidden" name="experiences[][cargo]" value="${$("#cargo").val()}"/>
+                                        <input type="hidden" name="experiences[][empresa]" value="${$("#empresa").val()}"/>
+                                        <input type="hidden" name="experiences[][descricao]" value="${$("#descricao").val()}"/>
                                         <div class="col-md-11">
                                             <b>DE ${$("#startdate").val()} ATÉ ${$("#enddate").val()}</b><br>
                                             <b style="color: blue;">${$("#cargo").val()},</b> ${$("#empresa").val()}<br>
@@ -55,20 +51,17 @@ $(function(){
                                     </div>
                                     <hr>
                                 </div>`);
-        expcounter++;
         limparCampos();
     });
 
     $("#cleanexp").click(limparCampos);
 
     $(document).on('click', '.removeexp', function(){
-        $(this).parent().parent().remove();
-        expcounter--;
+        $(this).parent().parent().parent().remove();
 
         if($('.divexp').find('.expline').length == 0)
         {
             $('.existexp').remove();
-            expcounter = 0;
         }
     });
 
@@ -84,10 +77,10 @@ $(function(){
 
         $("#formfield").append(`<div class="formline">
                                     <div class="row">
-                                        <input type="hidden" name="formations[${formcounter}][completedate]" value="${$("#completedate").val()}"/>
-                                        <input type="hidden" name="formations[${formcounter}][graduacao]" value="${$("#graduacao").val()}"/>
-                                        <input type="hidden" name="formations[${formcounter}][instituicao]" value="${$("#instituicao").val()}"/>
-                                        <input type="hidden" name="formations[${formcounter}][formdesc]" value="${$("#formdesc").val()}"/>
+                                        <input type="hidden" name="formations[][completedate]" value="${$("#completedate").val()}"/>
+                                        <input type="hidden" name="formations[][graduacao]" value="${$("#graduacao").val()}"/>
+                                        <input type="hidden" name="formations[][instituicao]" value="${$("#instituicao").val()}"/>
+                                        <input type="hidden" name="formations[][formdesc]" value="${$("#formdesc").val()}"/>
                                         <div class="col-md-11">
                                             <b>${$("#completedate").val()}</b><br>
                                             <b style="color: blue;">${$("#graduacao").val()},</b> ${$("#instituicao").val()}<br>
@@ -100,20 +93,17 @@ $(function(){
                                     </div>
                                     <hr>
                                 </div>`);
-        formcounter++;
         limparCamposForm();
     });
 
     $("#cleanform").click(limparCamposForm);
 
     $(document).on('click', '.removeform', function(){
-        $(this).parent().parent().remove();
-        formcounter--;
+        $(this).parent().parent().parent().remove();
 
         if($('.divform').find('.formline').length == 0)
         {
             $('.existform').remove();
-            formcounter = 0;
         }
     });
 
@@ -129,7 +119,7 @@ $(function(){
 
         $("#skillfield").append(`<div class="skillline">
                                     <div class="row">
-                                        <input type="hidden" name="skills[${skillcounter}]" value="${$("#skill").val()}"/>
+                                        <input type="hidden" name="skills[]" value="${$("#skill").val()}"/>
                                         <div class="col-md-11">
                                             <b>-</b> ${$("#skill").val()}
                                         </div>
@@ -139,18 +129,15 @@ $(function(){
                                     </div>
                                     <hr>
                                 </div>`);
-        skillcounter++;
         $("#skill").val("");
     });
 
     $(document).on('click', '.removeskill', function(){
-        $(this).parent().parent().remove();
-        skillcounter--;
+        $(this).parent().parent().parent().remove();
 
         if($('.divskill').find('.skillline').length == 0)
         {
             $('.existskill').remove();
-            skillcounter = 0;
         }
     });
 });
